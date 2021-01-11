@@ -31,6 +31,11 @@ app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
+
+//This makes the upload folder public
+// Without /uploads in start the way to access image is - http://localhost:3000/2021-01-11T15:38:16.367Zsample-jpg-file-for-testing.jpg
+app.use('/uploads',express.static('uploads'))
+
 app.use('/products', productRoutes)
 
 app.use('/orders', orderRoutes)
