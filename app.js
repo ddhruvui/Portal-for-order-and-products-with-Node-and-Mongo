@@ -11,6 +11,7 @@ const bodyParser = require('body-parser')
 
 const productRoutes = require('./api/routes/products')
 const orderRoutes = require('./api/routes/orders')
+const userRoutes = require('./api/routes/users')
 
 mongoose.connect('mongodb+srv://dhruv7393:node-rest-shop@cluster0.mxzmx.mongodb.net/node-rest-shop?retryWrites=true&w=majority', {useUnifiedTopology: true, useNewUrlParser: true})
 
@@ -39,6 +40,8 @@ app.use('/uploads',express.static('uploads'))
 app.use('/products', productRoutes)
 
 app.use('/orders', orderRoutes)
+
+app.use('/user', userRoutes)
 
 app.get('/',(req, res, next)=>{
     res.status(200).json({
