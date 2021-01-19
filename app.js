@@ -13,7 +13,7 @@ const productRoutes = require('./api/routes/products')
 const orderRoutes = require('./api/routes/orders')
 const userRoutes = require('./api/routes/users')
 
-mongoose.connect('mongodb+srv://dhruv7393:node-rest-shop@cluster0.mxzmx.mongodb.net/node-rest-shop?retryWrites=true&w=majority', {useUnifiedTopology: true, useNewUrlParser: true})
+mongoose.connect('mongodb+srv://dhruv7393:'+ process.env.MONGO_ATLAS_PW +'@cluster0.mxzmx.mongodb.net/node-rest-shop?retryWrites=true&w=majority', {useUnifiedTopology: true, useNewUrlParser: true})
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
